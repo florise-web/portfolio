@@ -18,7 +18,26 @@
     --accent:#a397ff; --accent-soft:#25213f; --chip:#25232c; }
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--accent);z-index:60}
+nav.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+nav.top.scrolled{border-bottom-color:var(--line)}
+.navin{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font-weight:800;text-decoration:none;letter-spacing:-.01em;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+nav.top.scrolled .logo{opacity:1;transform:none}
+.links{display:flex;gap:6px;align-items:center}
+.links a{text-decoration:none;font-size:14px;font-weight:600;color:var(--muted);padding:8px 12px;border-radius:10px;transition:color .2s,background .2s}
+.links a:hover,.links a.on{color:var(--ink);background:var(--chip)}
+.links a.go{color:#fff;background:var(--accent)}
+@media (prefers-color-scheme: dark){.links a.go{color:#121116}}
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+.js .reveal.in{opacity:1;transform:none}
+.js .hero-txt>*,.js .hero-phones{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.js .hero-txt>*:nth-child(2){animation-delay:.08s}.js .hero-txt>*:nth-child(3){animation-delay:.16s}.js .hero-txt>*:nth-child(4){animation-delay:.24s}.js .hero-phones{animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (min-width:901px){.kase>div:last-child{position:sticky;top:84px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal,.js .hero-txt>*,.js .hero-phones{opacity:1;transform:none;animation:none;transition:none}.hp{animation:none}}
+body{overflow-x:clip;background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 header{padding:64px 0 40px}
@@ -53,10 +72,7 @@ section{margin-bottom:80px}
 .step li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{font-size:13px;background:var(--chip);border-radius:8px;padding:4px 9px;color:var(--muted)}
-.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .shots figure{margin:0}
-.phone{aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--chip)}
-.phone img{width:100%;height:100%;display:block;object-fit:cover;object-position:top}
 figcaption{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35}
 /*unused*/.peek{display:inline-block;margin-top:14px;font-size:13px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 
@@ -78,6 +94,7 @@ footer h2{margin-bottom:12px}
   .kase{grid-template-columns:1fr;gap:22px}
 }
 @media (max-width:600px){
+  .links a:not(.go){display:none}
   .wrap{padding:0 16px} header{padding:40px 0 28px}
   .kase{padding:20px;border-radius:20px}
   .ai{grid-template-columns:1fr}
@@ -86,12 +103,44 @@ footer h2{margin-bottom:12px}
   section{margin-bottom:56px}
 
 }
+
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center}
+.hero-phones{position:relative;height:520px}
+.hp{position:absolute;width:200px;aspect-ratio:1/2;border-radius:30px;padding:6px;background:#0d0c12;box-shadow:0 30px 60px -20px rgba(20,10,60,.45),0 0 0 1px rgba(255,255,255,.06) inset;overflow:hidden}
+.hp video{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:24px;display:block;background:#1b1a21}
+.hp1{left:0;top:60px;transform:rotate(-7deg);animation:float 7s ease-in-out infinite}
+.hp2{left:50%;top:0;margin-left:-100px;z-index:2;animation:float 7s ease-in-out -2.3s infinite}
+.hp3{right:0;top:70px;transform:rotate(7deg);animation:float 7s ease-in-out -4.6s infinite}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -14px}}
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.shots.one{grid-template-columns:minmax(0,300px)}
+.phone{all:unset;box-sizing:border-box;display:block;width:100%;aspect-ratio:1/2;border-radius:26px;padding:5px;background:#0d0c12;position:relative;cursor:zoom-in;box-shadow:0 18px 40px -18px rgba(20,10,60,.4);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.phone:hover{transform:translateY(-4px) scale(1.015)}
+.phone:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.phone video{width:100%;height:100%;display:block;object-fit:cover;object-position:top;border-radius:21px;background:#1b1a21}
+.phone .play{position:absolute;inset:auto 12px 12px auto;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:12px;color:#fff;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);opacity:.0;transition:opacity .2s}
+.phone:hover .play{opacity:1}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(10,8,18,.78);backdrop-filter:blur(8px);display:grid;place-items:center;padding:20px}
+.modal[hidden]{display:none}
+.mbox{position:relative;height:min(88vh,860px);aspect-ratio:1/2;border-radius:34px;padding:7px;background:#0d0c12}
+.mbox video{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:28px;display:block}
+.mclose{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:#111;font-size:16px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.hero-phones{height:420px;max-width:520px}.hp{width:165px}.hp2{margin-left:-82px}}
+@media (max-width:600px){.hero-phones{height:330px}.hp{width:128px;border-radius:22px;padding:4px}.hp video{border-radius:18px}.hp2{margin-left:-64px}.shots.one{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.hp{animation:none}}
 </style>
 </head>
 <body>
+<div class="progress" aria-hidden="true"></div>
+<div class="modal" hidden><div class="mbox"><button class="mclose" type="button" aria-label="Закрыть">✕</button><video controls playsinline muted loop></video></div></div>
+<nav class="top"><div class="wrap navin">
+  <a class="logo" href="#">Луиза Агишева</a>
+  <div class="links"><a href="#cases">Кейсы</a><a href="#ai">ИИ и боты</a><a href="#exp">Опыт</a><a class="go" href="https://t.me/aluik1">Связаться</a></div>
+</div></nav>
 <div class="wrap">
 
-<header>
+<header class="hero">
+  <div class="hero-txt">
   <span class="tag">Project manager · запуски · ИИ</span>
   <h1>Луиза Агишева</h1>
   <p class="lead">8 лет в проектах и операционке. Меня зовут туда, где хаос и надо собрать всё в систему: <b>запуск, команда, процессы, цифры</b>. Последний год сама собираю сайты, тесты и ИИ-агентов для запусков. Ниже по каждой работе: какая была задача, что я сделала и как.</p>
@@ -99,20 +148,26 @@ footer h2{margin-bottom:12px}
     <a class="btn primary" href="https://t.me/aluik1">Написать в Telegram @aluik1</a>
     <a class="btn ghost" href="mailto:lyuza.agisheva@gmail.com">lyuza.agisheva@gmail.com</a>
   </div>
+  </div>
+  <div class="hero-phones" aria-hidden="true">
+    <div class="hp hp1"><video muted loop playsinline autoplay preload="auto" poster="video/utechka.jpg" src="video/utechka.mp4"></video></div>
+    <div class="hp hp2"><video muted loop playsinline autoplay preload="auto" poster="video/vetka.jpg" src="video/vetka.mp4"></video></div>
+    <div class="hp hp3"><video muted loop playsinline autoplay preload="auto" poster="video/dina.jpg" src="video/dina.mp4"></video></div>
+  </div>
 </header>
 
 <div class="stats">
-  <div class="stat"><div class="n">8 787</div><div class="t">человек нанято за 2024 год на запуск заводов</div></div>
-  <div class="stat"><div class="n">34 млн ₽</div><div class="t">инвестиций в ресторан, окупился за 5 месяцев</div></div>
-  <div class="stat"><div class="n">500 тыс ₽</div><div class="t">запуск в психологии, средний чек 45 тыс</div></div>
-  <div class="stat"><div class="n">21 × $1000</div><div class="t">продаж онлайн-курса по продвижению</div></div>
+  <div class="stat reveal"><div class="n" data-to="8787">8 787</div><div class="t">человек нанято за 2024 год на запуск заводов</div></div>
+  <div class="stat reveal"><div class="n" data-to="34" data-suf=" млн ₽">34 млн ₽</div><div class="t">инвестиций в ресторан, окупился за 5 месяцев</div></div>
+  <div class="stat reveal"><div class="n" data-to="500" data-suf=" тыс ₽">500 тыс ₽</div><div class="t">запуск в психологии, средний чек 45 тыс</div></div>
+  <div class="stat reveal"><div class="n" data-to="21" data-suf=" × $1000">21 × $1000</div><div class="t">продаж онлайн-курса по продвижению</div></div>
 </div>
 
-<section>
-  <h2>Кейсы: воронки для запусков</h2>
-  <p class="sub">Всё в кейсах собрано мной в Claude Code, без разработчика и дизайнера: от структуры и текстов до вёрстки, публикации и сбора заявок.</p>
+<section id="cases">
+  <h2 class="reveal">Кейсы: воронки для запусков</h2>
+  <p class="sub">Всё в кейсах собрано мной в Claude Code, без разработчика и дизайнера: от структуры и текстов до вёрстки, публикации и сбора заявок. Записи экрана показывают, как это выглядит у человека в телефоне. Нажмите на экран, чтобы открыть крупно.</p>
 
-  <article class="kase">
+  <article class="kase reveal">
     <div>
       <span class="num">Кейс 01 · онлайн-программа, саморазвитие</span>
       <h3>Воронка запуска от холодного подписчика до заявки</h3>
@@ -121,6 +176,7 @@ footer h2{margin-bottom:12px}
         <li><b>Тест-вход.</b> 9 вопросов, 4 типа результата: человек узнаёт, что его держит, и получает разбор</li>
         <li><b>Мини-приложение в Telegram.</b> Тот же тест проходят прямо в канале, без перехода на сайт</li>
         <li><b>Предзапись.</b> Заявки сразу падают в Google-таблицу команды</li>
+        <li><b>Страница практикума.</b> Видеоурок с плеером и скоростью воспроизведения, переход к записи</li>
         <li><b>Продающий лендинг.</b> Программа, тарифы, ответы на возражения</li>
       </ul></div>
       <div class="step"><div class="l">Как</div><p>Сначала профиль аудитории и стратегия запуска, потом под каждую ступень воронки свой экран. Тексты собраны из болей и формулировок самой аудитории.</p></div>
@@ -128,15 +184,16 @@ footer h2{margin-bottom:12px}
     </div>
     <div>
       <div class="shots">
-        <figure><div class="phone"><img src="img/vetka-realnosti.jpg" alt="Экран теста" loading="lazy"></div><figcaption>Тест</figcaption></figure>
-        <figure><div class="phone"><img src="img/kakoy-scenariy-test.jpg" alt="Тест в Telegram" loading="lazy"></div><figcaption>Мини-приложение в Telegram</figcaption></figure>
-        <figure><div class="phone"><img src="img/irina-predzapis.jpg" alt="Страница предзаписи" loading="lazy"></div><figcaption>Предзапись</figcaption></figure>
-        <figure><div class="phone"><img src="img/irina-perehod.jpg" alt="Продающий лендинг" loading="lazy"></div><figcaption>Лендинг</figcaption></figure>
+        <figure class="reveal"><button class="phone" type="button" data-v="video/vetka.mp4" aria-label="Открыть запись: Тест: проходим до результата"><video muted loop playsinline preload="none" poster="video/vetka.jpg"></video><span class="play">▶</span></button><figcaption>Тест: проходим до результата</figcaption></figure>
+        <figure class="reveal"><button class="phone" type="button" data-v="video/scenariy.mp4" aria-label="Открыть запись: Мини-приложение в Telegram"><video muted loop playsinline preload="none" poster="video/scenariy.jpg"></video><span class="play">▶</span></button><figcaption>Мини-приложение в Telegram</figcaption></figure>
+        <figure class="reveal"><button class="phone" type="button" data-v="video/metod.mp4" aria-label="Открыть запись: Страница практикума с видеоуроком"><video muted loop playsinline preload="none" poster="video/metod.jpg"></video><span class="play">▶</span></button><figcaption>Страница практикума с видеоуроком</figcaption></figure>
+        <figure class="reveal"><button class="phone" type="button" data-v="video/predzapis.mp4" aria-label="Открыть запись: Предзапись"><video muted loop playsinline preload="none" poster="video/predzapis.jpg"></video><span class="play">▶</span></button><figcaption>Предзапись</figcaption></figure>
+        <figure class="reveal"><button class="phone" type="button" data-v="video/perehod.mp4" aria-label="Открыть запись: Продающий лендинг"><video muted loop playsinline preload="none" poster="video/perehod.jpg"></video><span class="play">▶</span></button><figcaption>Продающий лендинг</figcaption></figure>
       </div>
     </div>
   </article>
 
-  <article class="kase">
+  <article class="kase reveal">
     <div>
       <span class="num">Кейс 02 · финансы, практикум</span>
       <h3>Прогрев к практикуму через тесты</h3>
@@ -151,14 +208,14 @@ footer h2{margin-bottom:12px}
     </div>
     <div>
       <div class="shots">
-        <figure><div class="phone"><img src="img/denezhnyj-marafon.jpg" alt="Лендинг практикума" loading="lazy"></div><figcaption>Лендинг практикума</figcaption></figure>
-        <figure><div class="phone"><img src="img/test-utechka.jpg" alt="Тест про утечки" loading="lazy"></div><figcaption>Тест «Утечки»</figcaption></figure>
-        <figure><div class="phone"><img src="img/denezhnyj-test.jpg" alt="Тест финансовой безопасности" loading="lazy"></div><figcaption>Диагностика</figcaption></figure>
+        <figure class="reveal"><button class="phone" type="button" data-v="video/marafon.mp4" aria-label="Открыть запись: Лендинг практикума"><video muted loop playsinline preload="none" poster="video/marafon.jpg"></video><span class="play">▶</span></button><figcaption>Лендинг практикума</figcaption></figure>
+        <figure class="reveal"><button class="phone" type="button" data-v="video/utechka.mp4" aria-label="Открыть запись: Тест «Утечки» до результата"><video muted loop playsinline preload="none" poster="video/utechka.jpg"></video><span class="play">▶</span></button><figcaption>Тест «Утечки» до результата</figcaption></figure>
+        <figure class="reveal"><button class="phone" type="button" data-v="video/dentest.mp4" aria-label="Открыть запись: Диагностика"><video muted loop playsinline preload="none" poster="video/dentest.jpg"></video><span class="play">▶</span></button><figcaption>Диагностика</figcaption></figure>
       </div>
     </div>
   </article>
 
-  <article class="kase">
+  <article class="kase reveal">
     <div>
       <span class="num">Кейс 03 · психология отношений</span>
       <h3>Флагман для нового эксперта с нуля</h3>
@@ -172,81 +229,93 @@ footer h2{margin-bottom:12px}
       <div class="step"><div class="l">Инструменты</div><div class="chips"><span class="chip">распаковка</span><span class="chip">оффер</span><span class="chip">Claude Code</span><span class="chip">лендинг + тест</span></div></div>
     </div>
     <div>
-      <div class="shots">
-        <figure><div class="phone"><img src="img/lora-na-svoih-usloviyah.jpg" alt="Лендинг программы" loading="lazy"></div><figcaption>Лендинг программы</figcaption></figure>
+      <div class="shots one">
+        <figure class="reveal"><button class="phone" type="button" data-v="video/lora.mp4" aria-label="Открыть запись: Лендинг программы"><video muted loop playsinline preload="none" poster="video/lora.jpg"></video><span class="play">▶</span></button><figcaption>Лендинг программы</figcaption></figure>
       </div>
     </div>
   </article>
 
-  <article class="kase">
+  <article class="kase reveal">
     <div>
       <span class="num">Кейс 04 · англоязычный рынок</span>
       <h3>Курс про переезд для зарубежной аудитории</h3>
       <div class="step"><div class="l">Задача</div><p>Эксперт запускает курс на англоязычную аудиторию, нужен вход в воронку и продающая страница на английском.</p></div>
       <div class="step"><div class="l">Что сделала</div><ul>
         <li><b>Лендинг на английском.</b> С видео эксперта и записью на курс</li>
-        <li><b>Тест.</b> По ответам показывает человеку его результат и ведёт к курсу</li>
+        <li><b>Переход на тест.</b> С лендинга человек уходит в бесплатный тест: вводит дату рождения и получает свой код</li>
+        <li><b>Результат по шагам.</b> Код открывается частями, а последний шаг ведёт к покупке курса</li>
       </ul></div>
       <div class="step"><div class="l">Как</div><p>Структуру и смыслы собрала на русском, тексты адаптировала под англоязычного читателя через ИИ и проверила логику воронки целиком.</p></div>
       <div class="step"><div class="l">Инструменты</div><div class="chips"><span class="chip">Claude Code</span><span class="chip">EN-локализация</span><span class="chip">лендинг + тест</span></div></div>
     </div>
     <div>
-      <div class="shots">
-        <figure><div class="phone"><img src="img/relocation-intensive.jpg" alt="Лендинг на английском" loading="lazy"></div><figcaption>Лендинг на английском</figcaption></figure>
+      <div class="shots one">
+        <figure class="reveal"><button class="phone" type="button" data-v="video/dina.mp4" aria-label="Открыть запись: Лендинг → переход на тест → результат"><video muted loop playsinline preload="none" poster="video/dina.jpg"></video><span class="play">▶</span></button><figcaption>Лендинг → переход на тест → результат</figcaption></figure>
       </div>
     </div>
   </article>
 </section>
 
-<section>
-  <h2>ИИ-системы, которые я собрала</h2>
+<section id="ai">
+  <h2 class="reveal">ИИ-системы и боты</h2>
   <p class="sub">Не «пользуюсь нейросетями», а встраиваю ИИ в работу так, чтобы рутина шла сама, а люди занимались решениями.</p>
   <div class="ai">
-    <div class="item">
+    <div class="item reveal">
       <h3>Система из 11 ИИ-агентов для запусков</h3>
       <div class="step"><div class="l">Задача</div><p>Запуск эксперта: много однотипной работы, которая каждый раз делается с нуля.</p></div>
       <div class="step"><div class="l">Что сделала</div><p>Агенты по ролям: разбор брифа, анализ аудитории, оффер, стратегия, прогревы в Telegram и Instagram, сценарии рилс и вебинара, лендинги. Диспетчер ведёт проект по этапам.</p></div>
       <div class="step"><div class="l">Как</div><p>Описала методологию каждого этапа отдельными инструкциями. Каждый агент берёт результат предыдущего, а я проверяю на контрольных точках.</p></div>
     </div>
-    <div class="item">
+    <div class="item reveal">
       <h3>Агент поиска работы</h3>
       <div class="step"><div class="l">Задача</div><p>Откликаться на десятки вакансий в разных местах и ничего не терять.</p></div>
       <div class="step"><div class="l">Что сделала</div><p>Три параллельных агента: hh, Telegram-каналы и сайты. Ищут, фильтруют, пишут сопроводительные под вакансию, отвечают HR.</p></div>
       <div class="step"><div class="l">Как</div><p>Общий файл критериев и фактов плюс общий журнал откликов, чтобы агенты не дублировали друг друга. Всё спорное откладывают мне.</p></div>
     </div>
-    <div class="item">
+    <div class="item reveal">
       <h3>Диагностика продаж</h3>
       <div class="step"><div class="l">Задача</div><p>Быстро понять, почему у эксперта не идут продажи.</p></div>
       <div class="step"><div class="l">Что сделала</div><p>Упаковала методику из 46 типовых ситуаций застоя («дорого», «я подумаю», падают охваты) в ИИ-инструмент: по описанию кейса ставит диагноз и говорит, что поменять.</p></div>
     </div>
-    <div class="item">
-      <h3>Автоматизации и контент</h3>
-      <div class="step"><div class="l">Задача</div><p>Снять с команды ручную рутину на каждом запуске.</p></div>
-      <div class="step"><div class="l">Что сделала</div><p>Автомонтаж рилс: обрезка пауз, субтитры по речи, нарезка под музыку. Связки через Zapier и n8n: задачи, уведомления, автопостинг. Заявки с сайтов сразу в Google-таблицы.</p></div>
+    <div class="item reveal">
+      <h3>Автоматизация через ботов</h3>
+      <div class="step"><div class="l">Задача</div><p>Чтобы заявки, задачи и посты не терялись в переписке и не требовали ручной работы.</p></div>
+      <div class="step"><div class="l">Что сделала</div><ul>
+        <li><b>Telegram-боты.</b> Запустила своего бота с нуля; боты принимают людей из воронки и отдают результат теста</li>
+        <li><b>Уведомления команде.</b> Заявка с сайта или теста падает в Google-таблицу и приходит сообщением в Telegram</li>
+        <li><b>Автопостинг.</b> Публикации по расписанию через n8n</li>
+        <li><b>Связки Zapier.</b> ИИ сам ставит задачи, шлёт оповещения и сохраняет файлы</li>
+      </ul></div>
+      <div class="step"><div class="l">Инструменты</div><div class="chips"><span class="chip">Telegram Bot API</span><span class="chip">n8n</span><span class="chip">Zapier</span><span class="chip">Apps Script</span></div></div>
+    </div>
+    <div class="item reveal">
+      <h3>Автомонтаж контента</h3>
+      <div class="step"><div class="l">Задача</div><p>Рилс для прогрева нужно много, а монтаж съедает часы.</p></div>
+      <div class="step"><div class="l">Что сделала</div><p>Автомонтаж рилс: обрезка пауз, субтитры по речи, нарезка под музыку. Шаблоны каруселей, которые собираются из текста.</p></div>
     </div>
   </div>
 </section>
 
-<section>
-  <h2>Опыт</h2>
+<section id="exp">
+  <h2 class="reveal">Опыт</h2>
   <p class="sub">Подробное резюме пришлю в Telegram или почтой.</p>
   <div class="cases">
-    <div class="case">
+    <div class="case reveal">
       <div class="when"><b>2025 — сейчас</b>Фриланс</div>
       <div><h3>Проектный менеджер / продюсер онлайн-проектов</h3>
       <p>Запуски экспертов: продуктовая линейка, оффер, прогревы, лендинги, команда подрядчиков. <strong>21 продажа по $1000</strong> на курсе по продвижению, <strong>500 тыс ₽</strong> на запуске в психологии.</p></div>
     </div>
-    <div class="case">
+    <div class="case reveal">
       <div class="when"><b>2022 — 2025</b>ОЭЗ «Алабуга»</div>
       <div><h3>Руководитель направления / Project Manager</h3>
       <p>Команда до 50 человек. Построила массовый найм с нуля: регламенты, KPI, отчёты. <strong>8 787 человек</strong> за 2024 год, рост с 600 до 13 000 сотрудников. Первый завод запущен <strong>за полгода вместо 2–3 лет</strong>. Международный проект с Китаем: релокация 14 инженеров.</p></div>
     </div>
-    <div class="case">
+    <div class="case reveal">
       <div class="when"><b>2018 — 2021</b>Ресторан, Казань</div>
       <div><h3>Управляющий партнёр</h3>
       <p>Привлекла <strong>34 млн ₽</strong>, нашла помещение, провела тендеры и стройку, собрала команду. Открылись за 3 месяца, <strong>окупаемость за 5 месяцев</strong>. До этого в общепите не работала даже официантом.</p></div>
     </div>
-    <div class="case">
+    <div class="case reveal">
       <div class="when"><b>2020 — 2022</b>Онлайн-школа, производство</div>
       <div><h3>Project coordinator, менеджер по развитию</h3>
       <p>Операционка онлайн-школы, текучесть −10%. В производственном бизнесе: +13 магазинов и 2 сети, оборот +50%, финансовый учёт с нуля.</p></div>
@@ -254,7 +323,7 @@ footer h2{margin-bottom:12px}
   </div>
 </section>
 
-<footer>
+<footer id="contact" class="reveal">
   <h2>Давайте созвонимся</h2>
   <p class="sub">Ищу удалённую работу: руководитель проектов, продакт или проджект по внедрению ИИ. Готова выйти сразу.</p>
   <div class="cta">
@@ -264,5 +333,56 @@ footer h2{margin-bottom:12px}
 </footer>
 
 </div>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // ступенчатая задержка для соседних элементов
+  document.querySelectorAll('.stats,.shots,.ai,.cases').forEach(function(g){
+    [].forEach.call(g.querySelectorAll('.reveal'),function(el,i){el.style.setProperty('--d',(i%4)*90+'ms')});
+  });
+  function count(el){
+    var to=+el.dataset.to,suf=el.dataset.suf||'',t0=null,dur=1400;
+    if(reduce||!to)return;
+    function f(t){t0=t0||t;var k=Math.min((t-t0)/dur,1),e=1-Math.pow(1-k,3);
+      el.textContent=Math.round(to*e).toLocaleString('ru-RU')+suf; if(k<1)requestAnimationFrame(f);}
+    requestAnimationFrame(f);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return; e.target.classList.add('in');
+      var n=e.target.querySelector('[data-to]'); if(n)count(n); io.unobserve(e.target);
+    })},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')})}
+  var bar=document.querySelector('.progress'),nav=document.querySelector('nav.top');
+  var links=[].slice.call(document.querySelectorAll('.links a[href^="#"]'));
+  function onScroll(){
+    var h=d.scrollHeight-innerHeight, y=scrollY;
+    bar.style.transform='scaleX('+(h>0?y/h:0)+')';
+    nav.classList.toggle('scrolled',y>40);
+    links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));
+      if(!s)return; var r=s.getBoundingClientRect(); a.classList.toggle('on',r.top<140&&r.bottom>140)});
+  }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  // видео в кейсах: грузим и играем, только когда экран виден
+  var vids=[].slice.call(document.querySelectorAll('.phone'));
+  if('IntersectionObserver' in window){
+    var vo=new IntersectionObserver(function(es){es.forEach(function(e){
+      var v=e.target.querySelector('video');
+      if(e.isIntersecting){ if(!v.src) v.src=e.target.dataset.v; if(!reduce) v.play().catch(function(){}); }
+      else v.pause();
+    })},{threshold:.35});
+    vids.forEach(function(b){vo.observe(b)});
+  }
+  var modal=document.querySelector('.modal'), mv=modal.querySelector('video');
+  function closeM(){modal.hidden=true; mv.pause(); mv.removeAttribute('src'); mv.load();}
+  vids.forEach(function(b){b.addEventListener('click',function(){mv.src=b.dataset.v; modal.hidden=false; mv.currentTime=0; mv.play().catch(function(){});})});
+  modal.addEventListener('click',function(e){if(e.target===modal||e.target.classList.contains('mclose'))closeM()});
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeM()});
+  if(reduce) document.querySelectorAll('.hp video').forEach(function(v){v.removeAttribute('autoplay');v.pause()});
+
+})();
+</script>
 </body>
 </html>
