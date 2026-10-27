@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Луиза Агишева · портфолио</title>
+<meta name="description" content="Project manager: запуски, операционка и внедрение ИИ. Кейсы: что и как сделано.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f4ef; --card:#ffffff; --ink:#16151a; --muted:#6b6873; --line:#e4e0d8;
+  --accent:#3d2bd6; --accent-soft:#ebe8ff; --chip:#efece5;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#121116; --card:#1b1a21; --ink:#f2f0f5; --muted:#a19dab; --line:#2c2a33;
+    --accent:#a397ff; --accent-soft:#25213f; --chip:#25232c; }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{padding:64px 0 40px}
+.tag{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:99px}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.05;font-weight:800;letter-spacing:-.02em;margin:18px 0 18px}
+.lead{font-size:clamp(18px,2.2vw,22px);color:var(--muted);max-width:720px}
+.lead b{color:var(--ink);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:14px;font-weight:600;text-decoration:none;font-size:16px}
+.btn.primary{background:var(--accent);color:#fff}
+@media (prefers-color-scheme: dark){.btn.primary{color:#121116}}
+.btn.ghost{border:1.5px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:8px 0 72px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.stat .n{font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-.02em}
+.stat .t{font-size:14px;color:var(--muted);margin-top:4px}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:28px;max-width:680px}
+section{margin-bottom:80px}
+
+/* кейсы */
+.kase{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;margin-bottom:20px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:start}
+.num{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase}
+.kase h3{font-size:clamp(21px,2.4vw,26px);font-weight:800;line-height:1.2;letter-spacing:-.01em;margin:6px 0 18px}
+.step{padding:12px 0;border-top:1px solid var(--line)}
+.step:first-of-type{border-top:0;padding-top:0}
+.step .l{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
+.step p,.step li{font-size:15px}
+.step ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.step li{padding-left:16px;position:relative}
+.step li b{font-weight:700}
+.step li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;background:var(--chip);border-radius:8px;padding:4px 9px;color:var(--muted)}
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.shots figure{margin:0}
+.phone{aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--chip)}
+.phone img{width:100%;height:100%;display:block;object-fit:cover;object-position:top}
+figcaption{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35}
+/*unused*/.peek{display:inline-block;margin-top:14px;font-size:13px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+
+.ai{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.ai .item{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
+.ai h3{font-size:19px;font-weight:700;margin-bottom:12px}
+
+.cases{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.case{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
+.case .when{color:var(--muted);font-size:14px}
+.case .when b{display:block;color:var(--ink);font-size:16px;font-weight:700;margin-bottom:2px}
+.case h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.case p{color:var(--muted);font-size:15px}
+.case strong{color:var(--ink);font-weight:600}
+footer{padding:56px 0 72px;border-top:1px solid var(--line)}
+footer h2{margin-bottom:12px}
+@media (max-width:900px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kase{grid-template-columns:1fr;gap:22px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px} header{padding:40px 0 28px}
+  .kase{padding:20px;border-radius:20px}
+  .ai{grid-template-columns:1fr}
+  .case{grid-template-columns:1fr;gap:6px}
+  .stat{padding:16px} .stat .n{font-size:21px;white-space:nowrap}
+  section{margin-bottom:56px}
+
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="tag">Project manager · запуски · ИИ</span>
+  <h1>Луиза Агишева</h1>
+  <p class="lead">8 лет в проектах и операционке. Меня зовут туда, где хаос и надо собрать всё в систему: <b>запуск, команда, процессы, цифры</b>. Последний год сама собираю сайты, тесты и ИИ-агентов для запусков. Ниже по каждой работе: какая была задача, что я сделала и как.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://t.me/aluik1">Написать в Telegram @aluik1</a>
+    <a class="btn ghost" href="mailto:lyuza.agisheva@gmail.com">lyuza.agisheva@gmail.com</a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">8 787</div><div class="t">человек нанято за 2024 год на запуск заводов</div></div>
+  <div class="stat"><div class="n">34 млн ₽</div><div class="t">инвестиций в ресторан, окупился за 5 месяцев</div></div>
+  <div class="stat"><div class="n">500 тыс ₽</div><div class="t">запуск в психологии, средний чек 45 тыс</div></div>
+  <div class="stat"><div class="n">21 × $1000</div><div class="t">продаж онлайн-курса по продвижению</div></div>
+</div>
+
+<section>
+  <h2>Кейсы: воронки для запусков</h2>
+  <p class="sub">Всё в кейсах собрано мной в Claude Code, без разработчика и дизайнера: от структуры и текстов до вёрстки, публикации и сбора заявок.</p>
+
+  <article class="kase">
+    <div>
+      <span class="num">Кейс 01 · онлайн-программа, саморазвитие</span>
+      <h3>Воронка запуска от холодного подписчика до заявки</h3>
+      <div class="step"><div class="l">Задача</div><p>Эксперту нужен был понятный путь для аудитории канала: зацепить, показать её проблему, собрать предзапись и продать программу на поток.</p></div>
+      <div class="step"><div class="l">Что сделала</div><ul>
+        <li><b>Тест-вход.</b> 9 вопросов, 4 типа результата: человек узнаёт, что его держит, и получает разбор</li>
+        <li><b>Мини-приложение в Telegram.</b> Тот же тест проходят прямо в канале, без перехода на сайт</li>
+        <li><b>Предзапись.</b> Заявки сразу падают в Google-таблицу команды</li>
+        <li><b>Продающий лендинг.</b> Программа, тарифы, ответы на возражения</li>
+      </ul></div>
+      <div class="step"><div class="l">Как</div><p>Сначала профиль аудитории и стратегия запуска, потом под каждую ступень воронки свой экран. Тексты собраны из болей и формулировок самой аудитории.</p></div>
+      <div class="step"><div class="l">Инструменты</div><div class="chips"><span class="chip">Claude Code</span><span class="chip">HTML/JS</span><span class="chip">Telegram Mini App</span><span class="chip">Google Apps Script</span><span class="chip">GitHub Pages</span></div></div>
+    </div>
+    <div>
+      <div class="shots">
+        <figure><div class="phone"><img src="img/vetka-realnosti.jpg" alt="Экран теста" loading="lazy"></div><figcaption>Тест</figcaption></figure>
+        <figure><div class="phone"><img src="img/kakoy-scenariy-test.jpg" alt="Тест в Telegram" loading="lazy"></div><figcaption>Мини-приложение в Telegram</figcaption></figure>
+        <figure><div class="phone"><img src="img/irina-predzapis.jpg" alt="Страница предзаписи" loading="lazy"></div><figcaption>Предзапись</figcaption></figure>
+        <figure><div class="phone"><img src="img/irina-perehod.jpg" alt="Продающий лендинг" loading="lazy"></div><figcaption>Лендинг</figcaption></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="kase">
+    <div>
+      <span class="num">Кейс 02 · финансы, практикум</span>
+      <h3>Прогрев к практикуму через тесты</h3>
+      <div class="step"><div class="l">Задача</div><p>Собрать регистрации на бесплатный недельный практикум и подогреть людей к продаже на финальном эфире.</p></div>
+      <div class="step"><div class="l">Что сделала</div><ul>
+        <li><b>Лендинг практикума.</b> Программа по дням, финальный эфир, регистрация</li>
+        <li><b>Тест «Куда утекают деньги».</b> 16 утверждений, 5 типов результата и действие на сегодня</li>
+        <li><b>Диагностика.</b> Человек видит свою точку А до старта практикума</li>
+      </ul></div>
+      <div class="step"><div class="l">Как</div><p>Тесты сделала входом в воронку: результат теста сразу ведёт на регистрацию, а тема результата совпадает с темой первого дня практикума.</p></div>
+      <div class="step"><div class="l">Инструменты</div><div class="chips"><span class="chip">Claude Code</span><span class="chip">квизы</span><span class="chip">лендинг</span><span class="chip">GitHub Pages</span></div></div>
+    </div>
+    <div>
+      <div class="shots">
+        <figure><div class="phone"><img src="img/denezhnyj-marafon.jpg" alt="Лендинг практикума" loading="lazy"></div><figcaption>Лендинг практикума</figcaption></figure>
+        <figure><div class="phone"><img src="img/test-utechka.jpg" alt="Тест про утечки" loading="lazy"></div><figcaption>Тест «Утечки»</figcaption></figure>
+        <figure><div class="phone"><img src="img/denezhnyj-test.jpg" alt="Тест финансовой безопасности" loading="lazy"></div><figcaption>Диагностика</figcaption></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="kase">
+    <div>
+      <span class="num">Кейс 03 · психология отношений</span>
+      <h3>Флагман для нового эксперта с нуля</h3>
+      <div class="step"><div class="l">Задача</div><p>У эксперта есть опыт и аудитория, но нет упакованного продукта и страницы, куда вести людей.</p></div>
+      <div class="step"><div class="l">Что сделала</div><ul>
+        <li><b>Распаковка и оффер.</b> Для кого программа и что изменится за 4 недели</li>
+        <li><b>Лендинг флагмана.</b> От боли аудитории к программе и записи</li>
+        <li><b>Тест.</b> Ведёт в канал прогрева перед стартом</li>
+      </ul></div>
+      <div class="step"><div class="l">Как</div><p>Созвон-распаковка → профиль аудитории → оффер → страница. Язык лендинга взят из реальных запросов клиенток эксперта.</p></div>
+      <div class="step"><div class="l">Инструменты</div><div class="chips"><span class="chip">распаковка</span><span class="chip">оффер</span><span class="chip">Claude Code</span><span class="chip">лендинг + тест</span></div></div>
+    </div>
+    <div>
+      <div class="shots">
+        <figure><div class="phone"><img src="img/lora-na-svoih-usloviyah.jpg" alt="Лендинг программы" loading="lazy"></div><figcaption>Лендинг программы</figcaption></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="kase">
+    <div>
+      <span class="num">Кейс 04 · англоязычный рынок</span>
+      <h3>Курс про переезд для зарубежной аудитории</h3>
+      <div class="step"><div class="l">Задача</div><p>Эксперт запускает курс на англоязычную аудиторию, нужен вход в воронку и продающая страница на английском.</p></div>
+      <div class="step"><div class="l">Что сделала</div><ul>
+        <li><b>Лендинг на английском.</b> С видео эксперта и записью на курс</li>
+        <li><b>Тест.</b> По ответам показывает человеку его результат и ведёт к курсу</li>
+      </ul></div>
+      <div class="step"><div class="l">Как</div><p>Структуру и смыслы собрала на русском, тексты адаптировала под англоязычного читателя через ИИ и проверила логику воронки целиком.</p></div>
+      <div class="step"><div class="l">Инструменты</div><div class="chips"><span class="chip">Claude Code</span><span class="chip">EN-локализация</span><span class="chip">лендинг + тест</span></div></div>
+    </div>
+    <div>
+      <div class="shots">
+        <figure><div class="phone"><img src="img/relocation-intensive.jpg" alt="Лендинг на английском" loading="lazy"></div><figcaption>Лендинг на английском</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section>
+  <h2>ИИ-системы, которые я собрала</h2>
+  <p class="sub">Не «пользуюсь нейросетями», а встраиваю ИИ в работу так, чтобы рутина шла сама, а люди занимались решениями.</p>
+  <div class="ai">
+    <div class="item">
+      <h3>Система из 11 ИИ-агентов для запусков</h3>
+      <div class="step"><div class="l">Задача</div><p>Запуск эксперта: много однотипной работы, которая каждый раз делается с нуля.</p></div>
+      <div class="step"><div class="l">Что сделала</div><p>Агенты по ролям: разбор брифа, анализ аудитории, оффер, стратегия, прогревы в Telegram и Instagram, сценарии рилс и вебинара, лендинги. Диспетчер ведёт проект по этапам.</p></div>
+      <div class="step"><div class="l">Как</div><p>Описала методологию каждого этапа отдельными инструкциями. Каждый агент берёт результат предыдущего, а я проверяю на контрольных точках.</p></div>
+    </div>
+    <div class="item">
+      <h3>Агент поиска работы</h3>
+      <div class="step"><div class="l">Задача</div><p>Откликаться на десятки вакансий в разных местах и ничего не терять.</p></div>
+      <div class="step"><div class="l">Что сделала</div><p>Три параллельных агента: hh, Telegram-каналы и сайты. Ищут, фильтруют, пишут сопроводительные под вакансию, отвечают HR.</p></div>
+      <div class="step"><div class="l">Как</div><p>Общий файл критериев и фактов плюс общий журнал откликов, чтобы агенты не дублировали друг друга. Всё спорное откладывают мне.</p></div>
+    </div>
+    <div class="item">
+      <h3>Диагностика продаж</h3>
+      <div class="step"><div class="l">Задача</div><p>Быстро понять, почему у эксперта не идут продажи.</p></div>
+      <div class="step"><div class="l">Что сделала</div><p>Упаковала методику из 46 типовых ситуаций застоя («дорого», «я подумаю», падают охваты) в ИИ-инструмент: по описанию кейса ставит диагноз и говорит, что поменять.</p></div>
+    </div>
+    <div class="item">
+      <h3>Автоматизации и контент</h3>
+      <div class="step"><div class="l">Задача</div><p>Снять с команды ручную рутину на каждом запуске.</p></div>
+      <div class="step"><div class="l">Что сделала</div><p>Автомонтаж рилс: обрезка пауз, субтитры по речи, нарезка под музыку. Связки через Zapier и n8n: задачи, уведомления, автопостинг. Заявки с сайтов сразу в Google-таблицы.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Опыт</h2>
+  <p class="sub">Подробное резюме пришлю в Telegram или почтой.</p>
+  <div class="cases">
+    <div class="case">
+      <div class="when"><b>2025 — сейчас</b>Фриланс</div>
+      <div><h3>Проектный менеджер / продюсер онлайн-проектов</h3>
+      <p>Запуски экспертов: продуктовая линейка, оффер, прогревы, лендинги, команда подрядчиков. <strong>21 продажа по $1000</strong> на курсе по продвижению, <strong>500 тыс ₽</strong> на запуске в психологии.</p></div>
+    </div>
+    <div class="case">
+      <div class="when"><b>2022 — 2025</b>ОЭЗ «Алабуга»</div>
+      <div><h3>Руководитель направления / Project Manager</h3>
+      <p>Команда до 50 человек. Построила массовый найм с нуля: регламенты, KPI, отчёты. <strong>8 787 человек</strong> за 2024 год, рост с 600 до 13 000 сотрудников. Первый завод запущен <strong>за полгода вместо 2–3 лет</strong>. Международный проект с Китаем: релокация 14 инженеров.</p></div>
+    </div>
+    <div class="case">
+      <div class="when"><b>2018 — 2021</b>Ресторан, Казань</div>
+      <div><h3>Управляющий партнёр</h3>
+      <p>Привлекла <strong>34 млн ₽</strong>, нашла помещение, провела тендеры и стройку, собрала команду. Открылись за 3 месяца, <strong>окупаемость за 5 месяцев</strong>. До этого в общепите не работала даже официантом.</p></div>
+    </div>
+    <div class="case">
+      <div class="when"><b>2020 — 2022</b>Онлайн-школа, производство</div>
+      <div><h3>Project coordinator, менеджер по развитию</h3>
+      <p>Операционка онлайн-школы, текучесть −10%. В производственном бизнесе: +13 магазинов и 2 сети, оборот +50%, финансовый учёт с нуля.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h2>Давайте созвонимся</h2>
+  <p class="sub">Ищу удалённую работу: руководитель проектов, продакт или проджект по внедрению ИИ. Готова выйти сразу.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://t.me/aluik1">Telegram @aluik1</a>
+    <a class="btn ghost" href="mailto:lyuza.agisheva@gmail.com">Почта</a>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
