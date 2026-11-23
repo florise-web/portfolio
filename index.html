@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Луиза Агишева · портфолио</title>
-<meta name="description" content="Project manager: запуски, операционка и внедрение ИИ. Кейсы: что и как сделано.">
+<title>Луиза · Руководитель проектов и продюсер</title>
+<meta name="description" content="Луиза, руководитель проектов и продюсер онлайн-запусков. Кейсы по управлению командами, запускам и внедрению ИИ.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,11 +32,11 @@ nav.top.scrolled .logo{opacity:1;transform:none}
 @media (prefers-color-scheme: dark){.links a.go{color:#121116}}
 .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
 .js .reveal.in{opacity:1;transform:none}
-.js .hero-txt>*,.js .hero-phones{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
-.js .hero-txt>*:nth-child(2){animation-delay:.08s}.js .hero-txt>*:nth-child(3){animation-delay:.16s}.js .hero-txt>*:nth-child(4){animation-delay:.24s}.js .hero-phones{animation-delay:.3s}
-@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+
+
 @media (min-width:901px){.kase>div:last-child{position:sticky;top:84px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal,.js .hero-txt>*,.js .hero-phones{opacity:1;transform:none;animation:none;transition:none}.hp{animation:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal,}
 body{overflow-x:clip;background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
@@ -50,10 +50,10 @@ h1{font-size:clamp(36px,6vw,64px);line-height:1.05;font-weight:800;letter-spacin
 .btn.primary{background:var(--accent);color:#fff}
 @media (prefers-color-scheme: dark){.btn.primary{color:#121116}}
 .btn.ghost{border:1.5px solid var(--line)}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:8px 0 72px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
-.stat .n{font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-.02em}
-.stat .t{font-size:14px;color:var(--muted);margin-top:4px}
+
+
+
+
 h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
 .sub{color:var(--muted);margin-bottom:28px;max-width:680px}
 section{margin-bottom:80px}
@@ -74,7 +74,6 @@ section{margin-bottom:80px}
 .chip{font-size:13px;background:var(--chip);border-radius:8px;padding:4px 9px;color:var(--muted)}
 .shots figure{margin:0}
 figcaption{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35}
-/*unused*/.peek{display:inline-block;margin-top:14px;font-size:13px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 
 .ai{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .ai .item{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
@@ -90,7 +89,7 @@ figcaption{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35}
 footer{padding:56px 0 72px;border-top:1px solid var(--line)}
 footer h2{margin-bottom:12px}
 @media (max-width:900px){
-  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  
   .kase{grid-template-columns:1fr;gap:22px}
 }
 @media (max-width:600px){
@@ -99,19 +98,11 @@ footer h2{margin-bottom:12px}
   .kase{padding:20px;border-radius:20px}
   .ai{grid-template-columns:1fr}
   .case{grid-template-columns:1fr;gap:6px}
-  .stat{padding:16px} .stat .n{font-size:21px;white-space:nowrap}
+   
   section{margin-bottom:56px}
 
 }
 
-.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center}
-.hero-phones{position:relative;height:520px}
-.hp{position:absolute;width:200px;aspect-ratio:1/2;border-radius:30px;padding:6px;background:#0d0c12;box-shadow:0 30px 60px -20px rgba(20,10,60,.45),0 0 0 1px rgba(255,255,255,.06) inset;overflow:hidden}
-.hp video{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:24px;display:block;background:#1b1a21}
-.hp1{left:0;top:60px;transform:rotate(-7deg);animation:float 7s ease-in-out infinite}
-.hp2{left:50%;top:0;margin-left:-100px;z-index:2;animation:float 7s ease-in-out -2.3s infinite}
-.hp3{right:0;top:70px;transform:rotate(7deg);animation:float 7s ease-in-out -4.6s infinite}
-@keyframes float{0%,100%{translate:0 0}50%{translate:0 -14px}}
 .shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .shots.one{grid-template-columns:minmax(0,300px)}
 .phone{all:unset;box-sizing:border-box;display:block;width:100%;aspect-ratio:1/2;border-radius:26px;padding:5px;background:#0d0c12;position:relative;cursor:zoom-in;box-shadow:0 18px 40px -18px rgba(20,10,60,.4);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
@@ -125,55 +116,95 @@ footer h2{margin-bottom:12px}
 .mbox{position:relative;height:min(88vh,860px);aspect-ratio:1/2;border-radius:34px;padding:7px;background:#0d0c12}
 .mbox video{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:28px;display:block}
 .mclose{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:#111;font-size:16px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.3)}
-@media (max-width:900px){.hero{grid-template-columns:1fr}.hero-phones{height:420px;max-width:520px}.hp{width:165px}.hp2{margin-left:-82px}}
-@media (max-width:600px){.hero-phones{height:330px}.hp{width:128px;border-radius:22px;padding:4px}.hp video{border-radius:18px}.hp2{margin-left:-64px}.shots.one{grid-template-columns:minmax(0,1fr)}}
-@media (prefers-reduced-motion:reduce){.hp{animation:none}}
+@media (max-width:600px){.shots.one{grid-template-columns:minmax(0,1fr)}}
+
+:root{--bg:#f7f7ff;--card:#fff;--ink:#17172a;--muted:#53536d;--line:#dcdcf0;--accent:#3829ba;--chip:#edeafa}
+body{overflow-wrap:break-word}
+.navin{min-height:64px;height:auto;padding-block:10px}
+.logo,nav.top.scrolled .logo{opacity:1;transform:none}
+.intro{background:#18153b;color:#fff;border-radius:32px;margin:24px 0 68px;padding:clamp(26px,7vw,82px);background-image:radial-gradient(ellipse at 92% 12%,#45349e 0%,transparent 58%)}
+.intro .eyebrow{color:#dfd9ff}
+.intro h1{font-size:clamp(33px,7vw,82px);letter-spacing:-.05em;line-height:1.04;margin:16px 0 24px}
+.intro h1 em{color:#c6baff;font-style:normal}
+.intro .lead{color:#eeeafe;max-width:622px}
+.intro .btn.primary{background:#e5dfff;color:#23154f}
+.intro .btn.ghost{border-color:#9a8bcf}
+.eyebrow,.num{font-size:14px;font-weight:700;color:var(--accent)}
+.selected{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+.selected article{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.selected h3{font-size:22px;line-height:1.2}
+.selected p:not(.eyebrow){color:var(--muted)}
+.selected .result strong{display:block;color:var(--ink);font-size:21px}
+.selected a{margin-top:auto;padding-top:8px;color:var(--accent);font-weight:700;text-underline-offset:4px}
+.step p,.step li,.case p{font-size:1rem}
+.phone .play{opacity:1}
+dialog.modal:not([open]){display:none}
+dialog.modal[open]{margin:auto;width:fit-content;height:fit-content;max-width:100%;max-height:100%;padding:20px;border:0;background:transparent;backdrop-filter:none;overflow:visible}
+dialog::backdrop{background:rgba(17,13,35,.82)}
+.mbox{height:min(80dvh,150vw,760px)}
+a:focus-visible,button:focus-visible{outline:3px solid #826aff;outline-offset:4px}
+@media(max-width:850px){.selected{grid-template-columns:1fr}.intro{margin-bottom:48px}}
+@media(max-width:420px){.intro{border-radius:22px;padding:24px 18px}.intro .btn{padding:12px 14px}}
 </style>
 </head>
 <body>
 <div class="progress" aria-hidden="true"></div>
-<div class="modal" hidden><div class="mbox"><button class="mclose" type="button" aria-label="Закрыть">✕</button><video controls playsinline muted loop></video></div></div>
+<dialog class="modal" aria-label="Запись экрана"><div class="mbox"><button class="mclose" type="button" aria-label="Закрыть">✕</button><video controls playsinline muted></video></div></dialog>
 <nav class="top"><div class="wrap navin">
-  <a class="logo" href="#">Луиза Агишева</a>
-  <div class="links"><a href="#cases">Кейсы</a><a href="#ai">ИИ и боты</a><a href="#exp">Опыт</a><a class="go" href="https://t.me/aluik1">Связаться</a></div>
+  <a class="logo" href="#top">Луиза</a>
+  <div class="links"><a href="#selected">Проекты</a><a href="#ai">ИИ и боты</a><a href="#exp">Опыт</a><a class="go" href="#contact">Связаться</a></div>
 </div></nav>
 <div class="wrap">
 
-<header class="hero">
-  <div class="hero-txt">
-  <span class="tag">Project manager · запуски · ИИ</span>
-  <h1>Луиза Агишева</h1>
-  <p class="lead">8 лет в проектах и операционке. Меня зовут туда, где хаос и надо собрать всё в систему: <b>запуск, команда, процессы, цифры</b>. Последний год сама собираю сайты, тесты и ИИ-агентов для запусков. Ниже по каждой работе: какая была задача, что я сделала и как.</p>
+<header class="intro" id="top">
+  <p class="eyebrow">Луиза · 8 лет в управлении проектами</p>
+  <h1>Руковожу проектами.<br>Запускаю продукты.<br><em>Внедряю ИИ.</em></h1>
+  <p class="lead">Собираю команду и процессы под задачу. В онлайн-запусках веду проект от исследования аудитории и оффера до лендинга, воронки и сбора заявок.</p>
   <div class="cta">
-    <a class="btn primary" href="https://t.me/aluik1">Написать в Telegram @aluik1</a>
-    <a class="btn ghost" href="mailto:lyuagisheva@gmail.com">lyuagisheva@gmail.com</a>
-  </div>
-  </div>
-  <div class="hero-phones" aria-hidden="true">
-    <div class="hp hp1"><video muted loop playsinline autoplay preload="auto" poster="video/utechka.jpg" src="video/utechka.mp4"></video></div>
-    <div class="hp hp2"><video muted loop playsinline autoplay preload="auto" poster="video/vetka.jpg" src="video/vetka.mp4"></video></div>
-    <div class="hp hp3"><video muted loop playsinline autoplay preload="auto" poster="video/dina.jpg" src="video/dina.mp4"></video></div>
+    <a class="btn primary" href="#selected">Посмотреть проекты</a>
+    <a class="btn ghost" href="https://t.me/aluik1">Написать в Telegram</a>
   </div>
 </header>
 
-<div class="stats">
-  <div class="stat reveal"><div class="n" data-to="8787">8 787</div><div class="t">человек нанято за 2024 год на запуск заводов</div></div>
-  <div class="stat reveal"><div class="n" data-to="34" data-suf=" млн ₽">34 млн ₽</div><div class="t">инвестиций в ресторан, окупился за 5 месяцев</div></div>
-  <div class="stat reveal"><div class="n" data-to="500" data-suf=" тыс ₽">500 тыс ₽</div><div class="t">запуск в психологии, средний чек 45 тыс</div></div>
-  <div class="stat reveal"><div class="n" data-to="21" data-suf=" × $1000">21 × $1000</div><div class="t">продаж онлайн-курса по продвижению</div></div>
-</div>
+<section id="selected" aria-labelledby="selected-title">
+  <h2 id="selected-title">Избранные проекты</h2>
+  <div class="selected">
+    <article>
+      <p class="eyebrow">Продюсирование</p>
+      <h3>Запуски онлайн-программ</h3>
+      <p>Разрабатывала офферы, собирала лендинги и воронки, координировала подрядчиков.</p>
+      <p class="result"><strong>500 тыс. ₽</strong> выручки на запуске в психологии</p>
+      <p class="result"><strong>21 продажа по $1 000</strong> на курсе по продвижению</p>
+      <a href="#cases">Посмотреть кейсы по воронкам</a>
+    </article>
+    <article>
+      <p class="eyebrow">Управление проектами</p>
+      <h3>Масштабирование процессов в Алабуге</h3>
+      <p>Руководила командой до 50 человек, выстроила процессы массового найма, отчетность и KPI.</p>
+      <p class="result"><strong>8 787 человек</strong> наняла команда за 2024 год</p>
+      <a href="#alabuga">Подробнее об опыте</a>
+    </article>
+    <article>
+      <p class="eyebrow">Внедрение ИИ</p>
+      <h3>Система для подготовки запусков</h3>
+      <p>Описала этапы запуска и собрала систему, которая передает результаты между этапами. Проверяю материалы в контрольных точках.</p>
+      <p class="result"><strong>11 ИИ-агентов</strong> от разбора брифа до материалов запуска</p>
+      <a href="#launch-agents">Как устроена система</a>
+    </article>
+  </div>
+</section>
 
 <section id="cases">
-  <h2 class="reveal">Кейсы: воронки для запусков</h2>
-  <p class="sub">Всё в кейсах собрано мной в Claude Code, без разработчика и дизайнера: от структуры и текстов до вёрстки, публикации и сбора заявок. Записи экрана показывают, как это выглядит у человека в телефоне. Нажмите на экран, чтобы открыть крупно.</p>
+  <h2 class="reveal">Воронки для запусков</h2>
+  <p class="sub">Сама собирала эти страницы, тесты и мини-приложения в Claude Code. В записях экрана показано, как человек проходит тест, видит результат и оставляет заявку.</p>
 
   <article class="kase reveal">
     <div>
-      <span class="num">Кейс 01 · онлайн-программа, саморазвитие</span>
+      <span class="num">онлайн-программа, саморазвитие</span>
       <h3>Воронка запуска от холодного подписчика до заявки</h3>
-      <div class="step"><div class="l">Задача</div><p>Эксперту нужен был понятный путь для аудитории канала: зацепить, показать её проблему, собрать предзапись и продать программу на поток.</p></div>
+      <div class="step"><div class="l">Задача</div><p>Эксперту нужен был понятный путь для аудитории канала: зацепить, показать ее проблему, собрать предзапись и продать программу на поток.</p></div>
       <div class="step"><div class="l">Что сделала</div><ul>
-        <li><b>Тест-вход.</b> 9 вопросов, 4 типа результата: человек узнаёт, что его держит, и получает разбор</li>
+        <li><b>Тест-вход.</b> 9 вопросов, 4 типа результата: человек узнает, что его держит, и получает разбор</li>
         <li><b>Мини-приложение в Telegram.</b> Тот же тест проходят прямо в канале, без перехода на сайт</li>
         <li><b>Предзапись.</b> Заявки сразу падают в Google-таблицу команды</li>
         <li><b>Страница практикума.</b> Видеоурок с плеером и скоростью воспроизведения, переход к записи</li>
@@ -195,7 +226,7 @@ footer h2{margin-bottom:12px}
 
   <article class="kase reveal">
     <div>
-      <span class="num">Кейс 02 · финансы, практикум</span>
+      <span class="num">финансы, практикум</span>
       <h3>Прогрев к практикуму через тесты</h3>
       <div class="step"><div class="l">Задача</div><p>Собрать регистрации на бесплатный недельный практикум и подогреть людей к продаже на финальном эфире.</p></div>
       <div class="step"><div class="l">Что сделала</div><ul>
@@ -203,7 +234,7 @@ footer h2{margin-bottom:12px}
         <li><b>Тест «Куда утекают деньги».</b> 16 утверждений, 5 типов результата и действие на сегодня</li>
         <li><b>Диагностика.</b> Человек видит свою точку А до старта практикума</li>
       </ul></div>
-      <div class="step"><div class="l">Как</div><p>Тесты сделала входом в воронку: результат теста сразу ведёт на регистрацию, а тема результата совпадает с темой первого дня практикума.</p></div>
+      <div class="step"><div class="l">Как</div><p>Тесты сделала входом в воронку: результат теста сразу ведет на регистрацию, а тема результата совпадает с темой первого дня практикума.</p></div>
       <div class="step"><div class="l">Инструменты</div><div class="chips"><span class="chip">Claude Code</span><span class="chip">квизы</span><span class="chip">лендинг</span><span class="chip">GitHub Pages</span></div></div>
     </div>
     <div>
@@ -217,15 +248,15 @@ footer h2{margin-bottom:12px}
 
   <article class="kase reveal">
     <div>
-      <span class="num">Кейс 03 · психология отношений</span>
+      <span class="num">психология отношений</span>
       <h3>Флагман для нового эксперта с нуля</h3>
       <div class="step"><div class="l">Задача</div><p>У эксперта есть опыт и аудитория, но нет упакованного продукта и страницы, куда вести людей.</p></div>
       <div class="step"><div class="l">Что сделала</div><ul>
         <li><b>Распаковка и оффер.</b> Для кого программа и что изменится за 4 недели</li>
         <li><b>Лендинг флагмана.</b> От боли аудитории к программе и записи</li>
-        <li><b>Тест.</b> Ведёт в канал прогрева перед стартом</li>
+        <li><b>Тест.</b> Ведет в канал прогрева перед стартом</li>
       </ul></div>
-      <div class="step"><div class="l">Как</div><p>Созвон-распаковка → профиль аудитории → оффер → страница. Язык лендинга взят из реальных запросов клиенток эксперта.</p></div>
+      <div class="step"><div class="l">Как</div><p>После созвона с экспертом составила профиль аудитории, сформулировала оффер и собрала страницу. Язык лендинга взят из реальных запросов клиенток эксперта.</p></div>
       <div class="step"><div class="l">Инструменты</div><div class="chips"><span class="chip">распаковка</span><span class="chip">оффер</span><span class="chip">Claude Code</span><span class="chip">лендинг + тест</span></div></div>
     </div>
     <div>
@@ -237,20 +268,20 @@ footer h2{margin-bottom:12px}
 
   <article class="kase reveal">
     <div>
-      <span class="num">Кейс 04 · англоязычный рынок</span>
+      <span class="num">англоязычный рынок</span>
       <h3>Курс про переезд для зарубежной аудитории</h3>
       <div class="step"><div class="l">Задача</div><p>Эксперт запускает курс на англоязычную аудиторию, нужен вход в воронку и продающая страница на английском.</p></div>
       <div class="step"><div class="l">Что сделала</div><ul>
         <li><b>Лендинг на английском.</b> С видео эксперта и записью на курс</li>
         <li><b>Переход на тест.</b> С лендинга человек уходит в бесплатный тест: вводит дату рождения и получает свой код</li>
-        <li><b>Результат по шагам.</b> Код открывается частями, а последний шаг ведёт к покупке курса</li>
+        <li><b>Результат по шагам.</b> Код открывается частями, а последний шаг ведет к покупке курса</li>
       </ul></div>
       <div class="step"><div class="l">Как</div><p>Структуру и смыслы собрала на русском, тексты адаптировала под англоязычного читателя через ИИ и проверила логику воронки целиком.</p></div>
       <div class="step"><div class="l">Инструменты</div><div class="chips"><span class="chip">Claude Code</span><span class="chip">EN-локализация</span><span class="chip">лендинг + тест</span></div></div>
     </div>
     <div>
       <div class="shots one">
-        <figure class="reveal"><button class="phone" type="button" data-v="video/dina.mp4" aria-label="Открыть запись: Лендинг → переход на тест → результат"><video muted loop playsinline preload="none" poster="video/dina.jpg"></video><span class="play">▶</span></button><figcaption>Лендинг → переход на тест → результат</figcaption></figure>
+        <figure class="reveal"><button class="phone" type="button" data-v="video/dina.mp4" aria-label="Открыть запись: Лендинг, тест и результат"><video muted loop playsinline preload="none" poster="video/dina.jpg"></video><span class="play">▶</span></button><figcaption>Лендинг, тест и результат</figcaption></figure>
       </div>
     </div>
   </article>
@@ -258,19 +289,19 @@ footer h2{margin-bottom:12px}
 
 <section id="ai">
   <h2 class="reveal">ИИ-системы и боты</h2>
-  <p class="sub">Не «пользуюсь нейросетями», а встраиваю ИИ в работу так, чтобы рутина шла сама, а люди занимались решениями.</p>
+  <p class="sub">Настраиваю ИИ для задач, которые команда повторяет на каждом запуске.</p>
   <div class="ai">
-    <div class="item reveal">
+    <div class="item reveal" id="launch-agents">
       <h3>Система из 11 ИИ-агентов для запусков</h3>
       <div class="step"><div class="l">Задача</div><p>Запуск эксперта: много однотипной работы, которая каждый раз делается с нуля.</p></div>
-      <div class="step"><div class="l">Что сделала</div><p>Агенты по ролям: разбор брифа, анализ аудитории, оффер, стратегия, прогревы в Telegram и Instagram, сценарии рилс и вебинара, лендинги. Диспетчер ведёт проект по этапам.</p></div>
-      <div class="step"><div class="l">Как</div><p>Описала методологию каждого этапа отдельными инструкциями. Каждый агент берёт результат предыдущего, а я проверяю на контрольных точках.</p></div>
+      <div class="step"><div class="l">Что сделала</div><p>Агенты по ролям: разбор брифа, анализ аудитории, оффер, стратегия, прогревы в Telegram и Instagram, сценарии рилс и вебинара, лендинги. Диспетчер ведет проект по этапам.</p></div>
+      <div class="step"><div class="l">Как</div><p>Описала методологию каждого этапа отдельными инструкциями. Каждый агент берет результат предыдущего, а я проверяю на контрольных точках.</p></div>
     </div>
     <div class="item reveal">
       <h3>Агент поиска работы</h3>
       <div class="step"><div class="l">Задача</div><p>Откликаться на десятки вакансий в разных местах и ничего не терять.</p></div>
       <div class="step"><div class="l">Что сделала</div><p>Три параллельных агента: hh, Telegram-каналы и сайты. Ищут, фильтруют, пишут сопроводительные под вакансию, отвечают HR.</p></div>
-      <div class="step"><div class="l">Как</div><p>Общий файл критериев и фактов плюс общий журнал откликов, чтобы агенты не дублировали друг друга. Всё спорное откладывают мне.</p></div>
+      <div class="step"><div class="l">Как</div><p>Общий файл критериев и фактов плюс общий журнал откликов, чтобы агенты не дублировали друг друга. Все спорное откладывают мне.</p></div>
     </div>
     <div class="item reveal">
       <h3>Диагностика продаж</h3>
@@ -284,7 +315,7 @@ footer h2{margin-bottom:12px}
         <li><b>Telegram-боты.</b> Запустила своего бота с нуля; боты принимают людей из воронки и отдают результат теста</li>
         <li><b>Уведомления команде.</b> Заявка с сайта или теста падает в Google-таблицу и приходит сообщением в Telegram</li>
         <li><b>Автопостинг.</b> Публикации по расписанию через n8n</li>
-        <li><b>Связки Zapier.</b> ИИ сам ставит задачи, шлёт оповещения и сохраняет файлы</li>
+        <li><b>Связки Zapier.</b> ИИ сам ставит задачи, шлет оповещения и сохраняет файлы</li>
       </ul></div>
       <div class="step"><div class="l">Инструменты</div><div class="chips"><span class="chip">Telegram Bot API</span><span class="chip">n8n</span><span class="chip">Zapier</span><span class="chip">Apps Script</span></div></div>
     </div>
@@ -301,31 +332,31 @@ footer h2{margin-bottom:12px}
   <p class="sub">Подробное резюме пришлю в Telegram или почтой.</p>
   <div class="cases">
     <div class="case reveal">
-      <div class="when"><b>2025 — сейчас</b>Фриланс</div>
+      <div class="when"><b>2025 · сейчас</b>Фриланс</div>
       <div><h3>Проектный менеджер / продюсер онлайн-проектов</h3>
       <p>Запуски экспертов: продуктовая линейка, оффер, прогревы, лендинги, команда подрядчиков. <strong>21 продажа по $1000</strong> на курсе по продвижению, <strong>500 тыс ₽</strong> на запуске в психологии.</p></div>
     </div>
-    <div class="case reveal">
-      <div class="when"><b>2022 — 2025</b>ОЭЗ «Алабуга»</div>
+    <div class="case reveal" id="alabuga">
+      <div class="when"><b>2022 · 2025</b>ОЭЗ «Алабуга»</div>
       <div><h3>Руководитель направления / Project Manager</h3>
-      <p>Команда до 50 человек. Построила массовый найм с нуля: регламенты, KPI, отчёты. <strong>8 787 человек</strong> за 2024 год, рост с 600 до 13 000 сотрудников. Первый завод запущен <strong>за полгода вместо 2–3 лет</strong>. Международный проект с Китаем: релокация 14 инженеров.</p></div>
+      <p>Команда до 50 человек. Построила массовый найм с нуля: регламенты, KPI, отчеты. <strong>8 787 человек</strong> за 2024 год, рост с 600 до 13 000 сотрудников. Первый завод запущен <strong>за полгода вместо 2–3 лет</strong>. Международный проект с Китаем: релокация 14 инженеров.</p></div>
     </div>
     <div class="case reveal">
-      <div class="when"><b>2018 — 2021</b>Ресторан, Казань</div>
-      <div><h3>Управляющий партнёр</h3>
+      <div class="when"><b>2018 · 2021</b>Ресторан, Казань</div>
+      <div><h3>Управляющий партнер</h3>
       <p>Привлекла <strong>34 млн ₽</strong>, нашла помещение, провела тендеры и стройку, собрала команду. Открылись за 3 месяца, <strong>окупаемость за 5 месяцев</strong>. До этого в общепите не работала даже официантом.</p></div>
     </div>
     <div class="case reveal">
-      <div class="when"><b>2020 — 2022</b>Онлайн-школа, производство</div>
+      <div class="when"><b>2020 · 2022</b>Онлайн-школа, производство</div>
       <div><h3>Project coordinator, менеджер по развитию</h3>
-      <p>Операционка онлайн-школы, текучесть −10%. В производственном бизнесе: +13 магазинов и 2 сети, оборот +50%, финансовый учёт с нуля.</p></div>
+      <p>Операционка онлайн-школы, текучесть −10%. В производственном бизнесе: +13 магазинов и 2 сети, оборот +50%, финансовый учет с нуля.</p></div>
     </div>
   </div>
 </section>
 
 <footer id="contact" class="reveal">
   <h2>Давайте созвонимся</h2>
-  <p class="sub">Ищу удалённую работу: руководитель проектов, продакт или проджект по внедрению ИИ. Готова выйти сразу.</p>
+  <p class="sub">Открыта к удаленной работе в управлении проектами, продюсировании и внедрении ИИ. Напишите мне, чтобы обсудить вашу задачу или запросить резюме.</p>
   <div class="cta">
     <a class="btn primary" href="https://t.me/aluik1">Telegram @aluik1</a>
     <a class="btn ghost" href="mailto:lyuagisheva@gmail.com">Почта</a>
@@ -336,22 +367,15 @@ footer h2{margin-bottom:12px}
 <script>
 (function(){
   var d=document.documentElement; d.classList.add('js');
-  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // ступенчатая задержка для соседних элементов
-  document.querySelectorAll('.stats,.shots,.ai,.cases').forEach(function(g){
-    [].forEach.call(g.querySelectorAll('.reveal'),function(el,i){el.style.setProperty('--d',(i%4)*90+'ms')});
+  document.querySelectorAll('.shots,.ai,.cases').forEach(function(group){
+    group.querySelectorAll('.reveal').forEach(function(element,index){
+      element.style.setProperty('--d',(index%4)*90+'ms');
+    });
   });
-  function count(el){
-    var to=+el.dataset.to,suf=el.dataset.suf||'',t0=null,dur=1400;
-    if(reduce||!to)return;
-    function f(t){t0=t0||t;var k=Math.min((t-t0)/dur,1),e=1-Math.pow(1-k,3);
-      el.textContent=Math.round(to*e).toLocaleString('ru-RU')+suf; if(k<1)requestAnimationFrame(f);}
-    requestAnimationFrame(f);
-  }
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){
       if(!e.isIntersecting)return; e.target.classList.add('in');
-      var n=e.target.querySelector('[data-to]'); if(n)count(n); io.unobserve(e.target);
+      io.unobserve(e.target);
     })},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
     document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
   }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')})}
@@ -365,22 +389,25 @@ footer h2{margin-bottom:12px}
       if(!s)return; var r=s.getBoundingClientRect(); a.classList.toggle('on',r.top<140&&r.bottom>140)});
   }
   addEventListener('scroll',onScroll,{passive:true}); onScroll();
-  // видео в кейсах: грузим и играем, только когда экран виден
-  var vids=[].slice.call(document.querySelectorAll('.phone'));
-  if('IntersectionObserver' in window){
-    var vo=new IntersectionObserver(function(es){es.forEach(function(e){
-      var v=e.target.querySelector('video');
-      if(e.isIntersecting){ if(!v.src) v.src=e.target.dataset.v; if(!reduce) v.play().catch(function(){}); }
-      else v.pause();
-    })},{threshold:.35});
-    vids.forEach(function(b){vo.observe(b)});
-  }
-  var modal=document.querySelector('.modal'), mv=modal.querySelector('video');
-  function closeM(){modal.hidden=true; mv.pause(); mv.removeAttribute('src'); mv.load();}
-  vids.forEach(function(b){b.addEventListener('click',function(){mv.src=b.dataset.v; modal.hidden=false; mv.currentTime=0; mv.play().catch(function(){});})});
-  modal.addEventListener('click',function(e){if(e.target===modal||e.target.classList.contains('mclose'))closeM()});
-  addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeM()});
-  if(reduce) document.querySelectorAll('.hp video').forEach(function(v){v.removeAttribute('autoplay');v.pause()});
+  var vids=Array.from(document.querySelectorAll('.phone'));
+  var modal=document.querySelector('.modal'), player=modal.querySelector('video');
+  var returnFocus;
+  vids.forEach(function(button){
+    button.addEventListener('click',function(){
+      returnFocus=button;
+      player.src=button.dataset.v;
+      modal.showModal();
+      player.play().catch(function(){});
+    });
+  });
+  modal.querySelector('.mclose').addEventListener('click',function(){modal.close()});
+  modal.addEventListener('click',function(event){if(event.target===modal)modal.close()});
+  modal.addEventListener('close',function(){
+    player.pause();
+    player.removeAttribute('src');
+    player.load();
+    returnFocus?.focus();
+  });
 
 })();
 </script>
