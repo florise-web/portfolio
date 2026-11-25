@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Луиза · Руководитель проектов и продюсер</title>
-<meta name="description" content="Луиза, руководитель проектов и продюсер онлайн-запусков. Кейсы по управлению командами, запускам и внедрению ИИ.">
+<title>Луиза · Руководитель проектов и операционный директор</title>
+<meta name="description" content="Луиза, руководитель проектов и операционный директор: беру запуск с нуля и довожу до цифр. 8 лет операционного управления, запуск 3 заводов в ОЭЗ «Алабуга», онлайн-запуски, внедрение ИИ.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -143,7 +143,29 @@ dialog.modal[open]{margin:auto;width:fit-content;height:fit-content;max-width:10
 dialog::backdrop{background:rgba(17,13,35,.82)}
 .mbox{height:min(80dvh,150vw,760px)}
 a:focus-visible,button:focus-visible{outline:3px solid #826aff;outline-offset:4px}
-@media(max-width:850px){.selected{grid-template-columns:1fr}.intro{margin-bottom:48px}}
+.selected{grid-template-columns:repeat(2,minmax(0,1fr))}
+.selected .chips{margin-bottom:2px}
+.metrics{list-style:none;display:flex;flex-direction:column;gap:8px;padding:14px 0 2px;border-top:1px solid var(--line)}
+.metrics li{color:var(--muted)}
+.metrics b{color:var(--ink);font-size:20px;font-weight:800;margin-right:4px}
+.traits{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.traits li{font-size:14px;font-weight:600;color:#eeeafe;border:1px solid #5d4fa8;border-radius:99px;padding:6px 12px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:44px;padding-top:28px;border-top:1px solid #3d3478}
+.stats dt{font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.02em;color:#fff}
+.stats dd{color:#cfc8f5;font-size:15px}
+.value{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.value article{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px}
+.value .vi{font-size:14px;font-weight:800;color:var(--accent)}
+.value h3{font-size:20px;line-height:1.25;margin:10px 0 8px}
+.value p{color:var(--muted)}
+.how{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:s}
+.how li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.how li::before{content:counter(s);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:800;font-size:14px;margin-bottom:6px}
+.how b{font-size:17px}
+.how span{color:var(--muted);font-size:15px}
+footer h2{max-width:760px}
+@media(max-width:850px){.selected,.value{grid-template-columns:1fr}.how,.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.intro{margin-bottom:48px}}
+@media(max-width:420px){.how{grid-template-columns:1fr}}
 @media(max-width:420px){.intro{border-radius:22px;padding:24px 18px}.intro .btn{padding:12px 14px}}
 </style>
 </head>
@@ -152,43 +174,94 @@ a:focus-visible,button:focus-visible{outline:3px solid #826aff;outline-offset:4p
 <dialog class="modal" aria-label="Запись экрана"><div class="mbox"><button class="mclose" type="button" aria-label="Закрыть">✕</button><video controls playsinline muted></video></div></dialog>
 <nav class="top"><div class="wrap navin">
   <a class="logo" href="#top">Луиза</a>
-  <div class="links"><a href="#selected">Проекты</a><a href="#ai">ИИ и боты</a><a href="#exp">Опыт</a><a class="go" href="#contact">Связаться</a></div>
+  <div class="links"><a href="#selected">Проекты</a><a href="#cases">Воронки</a><a href="#ai">ИИ и боты</a><a href="#exp">Опыт</a><a class="go" href="#contact">Связаться</a></div>
 </div></nav>
 <div class="wrap">
 
 <header class="intro" id="top">
-  <p class="eyebrow">Луиза · 8 лет в управлении проектами</p>
-  <h1>Руковожу проектами.<br>Запускаю продукты.<br><em>Внедряю ИИ.</em></h1>
-  <p class="lead">Собираю команду и процессы под задачу. В онлайн-запусках веду проект от исследования аудитории и оффера до лендинга, воронки и сбора заявок.</p>
+  <p class="eyebrow">Луиза · руководитель проектов и операционный директор · удалённо</p>
+  <h1>Беру запуск с нуля и&nbsp;довожу его <em>до&nbsp;цифр.</em></h1>
+  <p class="lead">8 лет операционного управления, последние 1,5 года веду запуски. Собираю команду, процессы и отчётность так, чтобы проект шёл без ручного контроля, а рутину отдаю ИИ.</p>
+  <ul class="traits" aria-label="Сильные стороны">
+    <li>Запуски с нуля</li><li>Команды до 50 человек</li><li>Процессы и KPI</li><li>Ориентир на результат</li><li>Внедрение ИИ</li>
+  </ul>
   <div class="cta">
-    <a class="btn primary" href="#selected">Посмотреть проекты</a>
+    <a class="btn primary" href="#selected">Смотреть проекты</a>
     <a class="btn ghost" href="https://t.me/aluik1">Написать в Telegram</a>
   </div>
+  <dl class="stats">
+    <div><dt>8 лет</dt><dd>в операционном управлении</dd></div>
+    <div><dt>3 завода</dt><dd>запуск в ОЭЗ «Алабуга»</dd></div>
+    <div><dt>8 787</dt><dd>наймов за 2024 год</dd></div>
+    <div><dt>$21 000</dt><dd>выручки на запуске онлайн-курса</dd></div>
+  </dl>
 </header>
 
-<section id="selected" aria-labelledby="selected-title">
-  <h2 id="selected-title">Избранные проекты</h2>
-  <div class="selected">
-    <article>
-      <p class="eyebrow">Продюсирование</p>
-      <h3>Запуски онлайн-программ</h3>
-      <p>Разрабатывала офферы, собирала лендинги и воронки, координировала подрядчиков.</p>
-      <p class="result"><strong>500 тыс. ₽</strong> выручки на запуске в психологии</p>
-      <p class="result"><strong>21 продажа по $1 000</strong> на курсе по продвижению</p>
-      <a href="#cases">Посмотреть кейсы по воронкам</a>
+<section id="value" aria-labelledby="value-title">
+  <h2 id="value-title" class="reveal">Чем я полезна команде</h2>
+  <p class="sub">Три вещи, за которые меня обычно зовут в проект.</p>
+  <div class="value">
+    <article class="reveal">
+      <span class="vi" aria-hidden="true">01</span>
+      <h3>Запуск с нуля</h3>
+      <p>Разбираю цель, сроки и ограничения, собираю план и команду, веду до первого результата. Завод, ресторан или онлайн-курс: логика запуска одна.</p>
     </article>
-    <article>
-      <p class="eyebrow">Управление проектами</p>
-      <h3>Масштабирование процессов в Алабуге</h3>
-      <p>Руководила командой до 50 человек, выстроила процессы массового найма, отчетность и KPI.</p>
-      <p class="result"><strong>8 787 человек</strong> наняла команда за 2024 год</p>
+    <article class="reveal">
+      <span class="vi" aria-hidden="true">02</span>
+      <h3>Процессы, которые выдерживают рост</h3>
+      <p>Регламенты, KPI и отчётность, по которым видно, где проект проседает. В «Алабуге» эта система держала найм при росте компании с 600 до 13 000 человек.</p>
+    </article>
+    <article class="reveal">
+      <span class="vi" aria-hidden="true">03</span>
+      <h3>ИИ вместо рутины</h3>
+      <p>Сама собираю в Claude Code агентов, ботов и автоматизации: от системы из 11 ИИ-агентов для запусков до заявок, которые сами падают в таблицу и Telegram.</p>
+    </article>
+  </div>
+</section>
+
+<section id="selected" aria-labelledby="selected-title">
+  <h2 id="selected-title" class="reveal">Избранные проекты</h2>
+  <p class="sub">Сначала результат, потом подробности.</p>
+  <div class="selected">
+    <article class="reveal">
+      <div class="chips"><span class="chip">Производство</span><span class="chip">Массовый найм</span><span class="chip">Команда до 50</span></div>
+      <h3>Закрыла найм под запуск 3 заводов в ОЭЗ «Алабуга»</h3>
+      <p>Построила массовый найм с нуля: регламенты, KPI, отчёты. Вела международный проект с Китаем по релокации инженеров.</p>
+      <ul class="metrics">
+        <li><b>8 787</b> человек нанято за 2024 год</li>
+        <li><b>↑ с 600 до 13 000</b> сотрудников в компании</li>
+        <li><b>6 месяцев</b> на первый завод вместо 2–3 лет</li>
+      </ul>
       <a href="#alabuga">Подробнее об опыте</a>
     </article>
-    <article>
-      <p class="eyebrow">Внедрение ИИ</p>
-      <h3>Система для подготовки запусков</h3>
-      <p>Описала этапы запуска и собрала систему, которая передает результаты между этапами. Проверяю материалы в контрольных точках.</p>
-      <p class="result"><strong>11 ИИ-агентов</strong> от разбора брифа до материалов запуска</p>
+    <article class="reveal">
+      <div class="chips"><span class="chip">Онлайн-запуски</span><span class="chip">Продюсирование</span><span class="chip">Воронки</span></div>
+      <h3>Собрала запуски онлайн-курсов, которые окупились на старте</h3>
+      <p>Оффер, прогрев, лендинги, тесты и команда подрядчиков. Страницы и мини-приложения собирала сама в Claude Code.</p>
+      <ul class="metrics">
+        <li><b>$21 000</b> на курсе по продвижению: 21 продажа по $1 000</li>
+        <li><b>500 тыс. ₽</b> на запуске в психологии</li>
+      </ul>
+      <a href="#cases">Смотреть воронки в записи</a>
+    </article>
+    <article class="reveal">
+      <div class="chips"><span class="chip">Бизнес с нуля</span><span class="chip">Инвестиции</span><span class="chip">Стройка</span></div>
+      <h3>Открыла ресторан за 3 месяца и окупила за 5</h3>
+      <p>Привлекла инвестиции, нашла помещение, провела тендеры и стройку, собрала команду. До этого в общепите не работала.</p>
+      <ul class="metrics">
+        <li><b>34 млн ₽</b> привлечённых инвестиций</li>
+        <li><b>5 месяцев</b> до окупаемости</li>
+      </ul>
+      <a href="#exp">Весь опыт</a>
+    </article>
+    <article class="reveal">
+      <div class="chips"><span class="chip">ИИ-агенты</span><span class="chip">Claude Code</span><span class="chip">Автоматизация</span></div>
+      <h3>Превратила подготовку запуска в систему из ИИ-агентов</h3>
+      <p>Описала методологию каждого этапа и собрала агентов, которые передают результат друг другу. Я проверяю на контрольных точках.</p>
+      <ul class="metrics">
+        <li><b>11 агентов</b> от брифа до лендинга и сценариев</li>
+        <li><b>1 диспетчер</b> ведёт проект по этапам</li>
+      </ul>
       <a href="#launch-agents">Как устроена система</a>
     </article>
   </div>
@@ -354,12 +427,24 @@ a:focus-visible,button:focus-visible{outline:3px solid #826aff;outline-offset:4p
   </div>
 </section>
 
+<section id="how" aria-labelledby="how-title">
+  <h2 id="how-title" class="reveal">Как я веду проект</h2>
+  <p class="sub">Одинаково для завода, ресторана и онлайн-запуска.</p>
+  <ol class="how">
+    <li class="reveal"><b>Цель в цифрах</b><span>Договариваемся, что считаем успехом и к какому сроку.</span></li>
+    <li class="reveal"><b>План и команда</b><span>Этапы, ответственные, контрольные точки. Нанимаю или собираю подрядчиков.</span></li>
+    <li class="reveal"><b>Процессы и отчётность</b><span>Регламенты и KPI, чтобы отклонения было видно сразу, а не в конце месяца.</span></li>
+    <li class="reveal"><b>Автоматизация</b><span>Повторяющееся отдаю ботам и ИИ-агентам, команда занимается важным.</span></li>
+  </ol>
+</section>
+
 <footer id="contact" class="reveal">
-  <h2>Давайте созвонимся</h2>
-  <p class="sub">Открыта к удаленной работе в управлении проектами, продюсировании и внедрении ИИ. Напишите мне, чтобы обсудить вашу задачу или запросить резюме.</p>
+  <h2>Ищете руководителя проектов или операционного директора на удалёнку?</h2>
+  <p class="sub">Открыта к удалённой работе: руководитель проектов, project manager, операционный директор. Напишите, обсудим задачу, пришлю резюме.</p>
   <div class="cta">
     <a class="btn primary" href="https://t.me/aluik1">Telegram @aluik1</a>
     <a class="btn ghost" href="mailto:lyuagisheva@gmail.com">Почта</a>
+    <a class="btn ghost" href="https://hh.ru/resume/601e7d5aff0f6c0b920039ed1f326541714875">Резюме на hh.ru</a>
   </div>
 </footer>
 
