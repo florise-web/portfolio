@@ -163,6 +163,12 @@ a:focus-visible,button:focus-visible{outline:3px solid #826aff;outline-offset:4p
 .how li::before{content:counter(s);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:800;font-size:14px;margin-bottom:6px}
 .how b{font-size:17px}
 .how span{color:var(--muted);font-size:15px}
+.path{list-style:none;display:flex;flex-direction:column;border-left:2px solid var(--line);margin-left:6px}
+.path li{position:relative;padding:0 0 28px 26px}
+.path li::before{content:"";position:absolute;left:-8px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.path .pw{display:block;font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.04em}
+.path b{display:block;font-size:19px;margin:4px 0 6px}
+.path p{color:var(--muted);max-width:720px}
 footer h2{max-width:760px}
 @media(max-width:850px){.selected,.value{grid-template-columns:1fr}.how,.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.intro{margin-bottom:48px}}
 @media(max-width:420px){.how{grid-template-columns:1fr}}
@@ -174,7 +180,7 @@ footer h2{max-width:760px}
 <dialog class="modal" aria-label="Запись экрана"><div class="mbox"><button class="mclose" type="button" aria-label="Закрыть">✕</button><video controls playsinline muted></video></div></dialog>
 <nav class="top"><div class="wrap navin">
   <a class="logo" href="#top">Луиза</a>
-  <div class="links"><a href="#selected">Проекты</a><a href="#cases">Воронки</a><a href="#ai">ИИ и боты</a><a href="#exp">Опыт</a><a class="go" href="#contact">Связаться</a></div>
+  <div class="links"><a href="#selected">Проекты</a><a href="#cases">Воронки</a><a href="#ai">ИИ и боты</a><a href="#path">Мой путь</a><a class="go" href="#contact">Связаться</a></div>
 </div></nav>
 <div class="wrap">
 
@@ -399,6 +405,19 @@ footer h2{max-width:760px}
       <div class="step"><div class="l">Что сделала</div><p>Автомонтаж рилс: обрезка пауз, субтитры по речи, нарезка под музыку. Шаблоны каруселей, которые собираются из текста.</p></div>
     </div>
   </div>
+</section>
+
+<section id="path" aria-labelledby="path-title">
+  <h2 id="path-title" class="reveal">Мой путь</h2>
+  <p class="sub">Я из районного центра в Башкирии на 4&nbsp;000 человек. Всё, что умею в управлении, собрано руками: от студенческих проектов до заводов.</p>
+  <ol class="path">
+    <li class="reveal"><span class="pw">Университет, Уфа</span><b>Первые команды и первые деньги</b><p>Состояла в 5 общественных организациях, 2 из них возглавляла. С командой придумали ролевую игру «Дом книг» на 60–150 участников и продавали её крупным работодателям Уфы, в том числе «Метро», как инструмент оценки кандидатов. Проводили бизнес-завтраки и нетворкинги для предпринимателей.</p></li>
+    <li class="reveal"><span class="pw">Первый бизнес</span><b>150 тыс. ₽ инвестиций в агентство</b><p>Привлекла первые инвестиции и запустила агентство по упаковке бизнеса во франшизу: находили бизнесы, которые можно масштабировать, и выводили владельцев на упаковку.</p></li>
+    <li class="reveal"><span class="pw">22 года, Краснодар</span><b>35 млн ₽ и ресторан в чужом городе</b><p>Пришла к основателю сети из 42 ресторанов с предложением открыть точку по франшизе. За 8 месяцев нашла инвесторов, переехала в Краснодар, сама вела помещение, найм, подрядчиков, стройку и поставщиков. Открылись, через 5 месяцев вышли на окупаемость. Пандемия заставила закрыть проект, и закрытие я тоже довела до конца: суды, собственник здания, имущество. Главный вывод: закрыть бизнес в разы сложнее, чем открыть.</p></li>
+    <li class="reveal"><span class="pw">Малый бизнес</span><b>Из ремесла в бизнес</b><p>В производстве декоративных пряников наладила документооборот, финансовый учёт и процессы, расширила каналы сбыта, чтобы продажи шли и вне сезона.</p></li>
+    <li class="reveal"><span class="pw">2022–2025, ОЭЗ «Алабуга»</span><b>От мероприятий до трёх заводов</b><p>Начала с ежемесячных четырёхдневных мероприятий для кандидатов: приехало больше 1&nbsp;000 человек, около 40% устроились в компанию. Через 4 месяца меня повысили до руководителя: найм, адаптация, обучение, кризисные ситуации, запуск новых мощностей. Первый завод запустили за 6 месяцев вместо обычных 2–3 лет, по той же схеме ещё два.</p></li>
+    <li class="reveal"><span class="pw">2025 · сейчас</span><b>Онлайн-запуски и ИИ</b><p>Перенесла управленческий опыт в продюсирование: стратегия, воронка, цифры, проверка гипотез. Параллельно сама собираю в Claude Code лендинги, ботов и ИИ-агентов.</p></li>
+  </ol>
 </section>
 
 <section id="exp">
